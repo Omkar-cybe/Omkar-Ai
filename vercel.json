@@ -1,13 +1,8 @@
+
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://omkar-ai-backend.onrender.com/api/$1" }
-  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
   "builds": [
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
-    }
+    { "src": "frontend/package.json", "use": "@vercel/static-build", "config": { "distDir": "frontend/build" } }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "frontend/build/index.html" }
